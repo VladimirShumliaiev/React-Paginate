@@ -1,20 +1,17 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import './App.css';
 import Users from "./Components/Users";
-import axios from "axios";
+import GetUsers from "./Components/urls/GetUsers";
 
 function App() {
-  const [users, setUsers] = useState([])
+    const [users, setUsers] = useState([])
 
-  useEffect(() => {
-      axios.get('https://jsonplaceholder.typicode.com/users').then
-      (({data}) => setUsers(data))
-  },[])
-  return (
-    <div className="App">
-      <Users data={users}/>
-    </div>
-  );
+    return (
+        <div className="App">
+            <GetUsers users={users} setUsers={setUsers}/>
+            <Users data={users}/>
+        </div>
+    );
 }
 
 export default App;
