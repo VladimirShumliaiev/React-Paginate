@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import style from './Users.module.css'
 import ReactPaginate from "react-paginate";
 
-const Users = (props) => {
+const Pagination = (props) => {
     const {data} = props
     const [currentItems, setCurrentItems] = useState([]);
     const [pageCount, setPageCount] = useState(0);
@@ -23,16 +23,10 @@ const Users = (props) => {
     return (
         <>
             <div>
-                {currentItems.map(user => {
+                {currentItems.map(image => {
                     return (
-                        <div key={user.id}>
-                            <div>
-                                {user.name}
-                            </div>
-                            <div>
-                                {user.username}
-                            </div>
-                            <hr/>
+                        <div key={image.id}>
+                            <img src={image.url} alt=""/>
                         </div>
                     )
                 })}
@@ -55,4 +49,4 @@ const Users = (props) => {
     );
 };
 
-export default Users;
+export default Pagination;

@@ -1,15 +1,16 @@
 import React, {useState} from "react";
 import './App.css';
-import Users from "./Components/Users";
-import GetUsers from "./Components/urls/GetUsers";
+import GetImages from "./Components/GetImages";
+import Pagination from "./Components/Pagination";
+
 
 function App() {
-    const [users, setUsers] = useState([])
+    const [image, setImage] = useState([])
 
     return (
         <div className="App">
-            <GetUsers users={users} setUsers={setUsers}/>
-            <Users data={users}/>
+            <GetImages setImage={setImage}/>
+            <Pagination data={image}/>
         </div>
     );
 }
