@@ -4,13 +4,14 @@ import GetImages from "./Components/GetImages";
 import Pagination from "./Components/Pagination";
 
 
+
 function App() {
-    const [image, setImage] = useState([])
+const [images, setImages] = useState([])
 
     return (
         <div className="App">
-            <GetImages setImage={setImage}/>
-            <Pagination data={image}/>
+            <GetImages setImages={setImages}/>
+            <Pagination data={images}/>
         </div>
     );
 }

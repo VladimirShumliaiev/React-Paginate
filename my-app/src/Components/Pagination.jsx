@@ -1,13 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import style from './Users.module.css'
 import ReactPaginate from "react-paginate";
+import style from './Pagination.module.css'
 
 const Pagination = (props) => {
     const {data} = props
     const [currentItems, setCurrentItems] = useState([]);
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);
-    const itemsPerPage = 1
+    const itemsPerPage = 2
 
     useEffect(() => {
         const endOffset = itemOffset + itemsPerPage;
@@ -18,19 +18,14 @@ const Pagination = (props) => {
     const handlePageClick = (event) => {
         const newOffset = event.selected * itemsPerPage % data.length;
         setItemOffset(newOffset);
-    };
-
+    }
     return (
-        <>
-            <div>
-                {currentItems.map(image => {
-                    return (
-                        <div key={image.id}>
-                            <img src={image.url} alt=""/>
-                        </div>
-                    )
-                })}
-            </div>
+        <div>
+            {currentItems.map(image => (
+                <span key={image.id}>
+                    <img src={image.url} alt=""/>
+                </span>
+            ))}
             <ReactPaginate
                 breakLabel="..."
                 nextLabel="next >"
@@ -45,7 +40,7 @@ const Pagination = (props) => {
                 nextLinkClassName={style.pageNum}
                 activeLinkClassName={style.active}
             />
-        </>
+        </div>
     );
 };
 

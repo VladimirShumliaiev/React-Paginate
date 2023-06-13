@@ -2,18 +2,13 @@ import React, {useEffect} from 'react';
 import axios from "axios";
 
 const GetImages = (props) => {
-    const {image, setImage} = props
+    const {setImages} = props
     useEffect(() => {
-        axios.get('https://jsonplaceholder.typicode.com/photos').then(({data}) => setImage(data))
-    }, [image])
+        axios.get('https://jsonplaceholder.typicode.com/photos').then(({data}) => setImages(data))
+    },[])
     return (
         <div>
-            {/*{image.map(i => (*/}
-            {/*    <div>*/}
-            {/*        <div><img src={i.url} alt={i.title}/></div>*/}
-            {/*    </div>*/}
-            {/*    )*/}
-            {/*)}*/}
+            
         </div>
     );
 };
