@@ -27,6 +27,8 @@ const Pagination = (props) => {
             {currentItems.map(e => (
                 <span key={e.id} className={style.image}>
                     <img src={e.url} alt=""/>
+                    {' '}
+                    <img src={e.thumbnailUrl} alt=""/>
                 </span>
             ))}
 
