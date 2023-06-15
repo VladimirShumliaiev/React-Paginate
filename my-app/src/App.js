@@ -1,8 +1,7 @@
-import React, { useState} from "react";
+import React, {useState} from "react";
 import './App.css';
 import GetImages from "./Components/GetImages";
 import Pagination from "./Components/Pagination";
-
 
 
 function App() {

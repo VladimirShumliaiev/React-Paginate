@@ -3,12 +3,10 @@ import axios from "axios";
 
 const GetImages = (props) => {
     const {setImages} = props
-
     useEffect(() => {
-        axios.get('https://jsonplaceholder.typicode.com/photos')
-            .then(({data}) => setImages(data))
-
-    },[props])
+        axios.get('https://jsonplaceholder.typicode.com/photos').then
+        (({data}) => setImages(data))
+    },[])
     return (
         <div>
 

@@ -9,7 +9,7 @@
 }
 
 .pageNum {
-    padding: 8px 15px;
+    padding: 8px 10px;
     border-radius: 3px;
     font-weight: 400;
     cursor: pointer;
@@ -17,6 +17,7 @@
 
 a.active {
     background-color: darkorchid;
+    color: white;
 }
 
 .image {
