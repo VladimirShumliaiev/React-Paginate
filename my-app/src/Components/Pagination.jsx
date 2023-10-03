@@ -7,7 +7,7 @@ const Pagination = (props) => {
     const [currentItems, setCurrentItems] = useState([]);
     const [pageCount, setPageCount] = useState(0);
     const [itemOffset, setItemOffset] = useState(0);
-    const itemsPerPage = 1
+    const itemsPerPage = 3
 
     useEffect(() => {
         const endOffset = itemOffset + itemsPerPage;
